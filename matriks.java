@@ -21,7 +21,7 @@ public class matriks {
     }
 
     //Selektor
-    
+
 
     //Setter matriks
     public void tulis() {
@@ -31,6 +31,10 @@ public class matriks {
             }
             System.out.println();
         }
+    }
+
+    public void setElmt(int brs ,int klm) {
+        matriks[brs][klm]=scan.nextInt();
     }
 
     
