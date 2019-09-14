@@ -22,6 +22,15 @@ public class matriks {
 
     //Selektor
 
+    public int getBaris(){
+        return baris;
+    }
+    public int getKolom(){
+        return kolom;
+    }
+    public int getELmt(int brs, int klm){
+        return (matriks[brs][klm]);
+    }
 
     //Setter matriks
     public void tulis() {
