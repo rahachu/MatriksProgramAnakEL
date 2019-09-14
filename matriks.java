@@ -6,6 +6,7 @@ public class matriks {
     private int kolom;
     private int[][] matriks;
 
+    //Konstruktor matriks
     public matriks() {
         System.out.print("Masukan jumlah baris:");
         baris = scan.nextInt();
@@ -19,6 +20,10 @@ public class matriks {
         }
     }
 
+    //Selektor
+    
+
+    //Setter matriks
     public void tulis() {
         for (int i = 0; i < baris; i++) {
             for (int j = 0; j < kolom; j++) {
