@@ -29,7 +29,7 @@ public class matriks {
         return kolom;
     }
     public double getELmt(int brs, int klm){
-        return (matriks[brs][klm]);
+        return (matriks[brs-1][klm-1]);
     }
 
     //Setter matriks
