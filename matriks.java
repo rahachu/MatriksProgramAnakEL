@@ -43,7 +43,7 @@ public class matriks {
     }
 
     public void setElmt(int brs ,int klm, int elmt) {
-        matriks[brs][klm]=elmt;
+        matriks[brs-1][klm-1]=elmt;
     }
 
     //Operasi Baris Elementer
