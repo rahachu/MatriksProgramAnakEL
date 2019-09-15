@@ -42,8 +42,8 @@ public class matriks {
         }
     }
 
-    public void setElmt(int brs ,int klm) {
-        matriks[brs-1][klm-1]=scan.nextInt();
+    public void setElmt(int brs ,int klm, int elmt) {
+        matriks[brs][klm]=elmt;
     }
 
     //Operasi Baris Elementer
@@ -64,7 +64,9 @@ public class matriks {
     }
 
     //Gauss
+    public void matirksGaus(){
 
+    }
     //Gauss Jordan
     public void gaussJordan() {
         //gauss();
