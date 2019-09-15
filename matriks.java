@@ -12,7 +12,7 @@ public class matriks {
         baris = scan.nextInt();
         System.out.print("Masukan jumlah kolom:");
         kolom = scan.nextInt();
-        matriks = new int [baris][kolom];
+        matriks = new double [baris][kolom];
         for (int i = 0; i < baris; i++) {
             for (int j = 0; j < kolom; j++) {
                 matriks[i][j]= scan.nextInt();
@@ -28,8 +28,8 @@ public class matriks {
     public int getKolom(){
         return kolom;
     }
-    public int getELmt(int brs, int klm){
-        return (matriks[brs][klm]);
+    public double getELmt(int brs, int klm){
+        return (matriks[brs-1][klm-1]);
     }
 
     //Setter matriks
@@ -49,13 +49,13 @@ public class matriks {
     //Operasi Baris Elementer
     public void tambahBaris(int kali,int baris1, int baris2) {
         for (int i = 0; i < kolom; i++) {
-            matriks[baris1][i] += matriks[baris2][i]*kali;
+            matriks[baris1-1][i] += (matriks[baris2-1][i]*kali);
         }
     }
 
     public void bagiBaris(int baris1,int x) {
         for (int i = 0; i < kolom; i++) {
-            matriks[baris1][i] /= x;
+            matriks[baris1-1][i] /= x;
         }
     }
 
@@ -69,11 +69,11 @@ public class matriks {
     }
     //Gauss Jordan
     public void gaussJordan() {
-        gauss();
+        //gauss();
         for (int i = kolom-2; i >= 0; i--) {
             for (int j = baris-1; j >= 0; j++) {
                 if (getELmt(j, i)!=0) {
-                    obe;
+                    //obe;
                 }
             }
         }
