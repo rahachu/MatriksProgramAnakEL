@@ -32,7 +32,7 @@ public class matriks {
         matriks = new double [baris][kolom];
         for (int i = 0; i < baris; i++) {
             for (int j = 0; j < kolom; j++) {
-                matriks[i][j]= scan.nextInt();
+                matriks[i][j]= scan.nextDouble();
             }
         }
     }
@@ -69,9 +69,5 @@ public class matriks {
         for (int i = 0; i < kolom; i++) {
             matriks[baris1-1][i] /= x;
         }
-    }
-
-    public void buat1Utama(int baris1) {
-        
     }
 }
