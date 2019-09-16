@@ -7,7 +7,24 @@ public class matriks {
     private double[][] matriks;
 
     //Konstruktor matriks
-    public matriks() {
+    public void setMatriks() {
+        matriks = new double [baris][kolom];
+    }
+
+    //Selektor
+
+    public int getBaris(){
+        return baris;
+    }
+    public int getKolom(){
+        return kolom;
+    }
+    public double getELmt(int brs, int klm){
+        return (matriks[brs][klm]);
+    }
+
+    //Setter matriks
+    public void baca() {
         System.out.print("Masukan jumlah baris:");
         baris = scan.nextInt();
         System.out.print("Masukan jumlah kolom:");
@@ -20,19 +37,14 @@ public class matriks {
         }
     }
 
-    //Selektor
-
-    public int getBaris(){
-        return baris;
-    }
-    public int getKolom(){
-        return kolom;
-    }
-    public double getELmt(int brs, int klm){
-        return (matriks[brs-1][klm-1]);
+    public void setBaris(int x) {
+        baris = x;
     }
 
-    //Setter matriks
+    public void setKolom(int x) {
+        kolom = x;
+    }
+
     public void tulis() {
         for (int i = 0; i < baris; i++) {
             for (int j = 0; j < kolom; j++) {
@@ -42,7 +54,7 @@ public class matriks {
         }
     }
 
-    public void setElmt(int brs ,int klm, int elmt) {
+    public void setElmt(int brs ,int klm, Double elmt) {
         matriks[brs][klm]=elmt;
     }
 
@@ -62,21 +74,4 @@ public class matriks {
     public void buat1Utama(int baris1) {
         
     }
-
-    //Gauss
-    public void matirksGaus(){
-
-    }
-    //Gauss Jordan
-    public void gaussJordan() {
-        //gauss();
-        for (int i = kolom-2; i >= 0; i--) {
-            for (int j = baris-1; j >= 0; j++) {
-                if (getELmt(j, i)!=0) {
-                    //obe;
-                }
-            }
-        }
-    }
-
 }
