@@ -1,12 +1,18 @@
 public class kofaktor {
-    public static double det(matriks a) {
+    public static double detK(matriks a) {
         if (a.getBaris()==2 && a.getKolom()==2) {
             return (a.getELmt(0, 0)*a.getELmt(1, 1) - a.getELmt(1, 0)*a.getELmt(0, 1));
         }
         else {
-            return 0;
+            int result;
+            result=0;
+            for (int i = 0; i < a.getKolom(); i++) {
+                result += a.getELmt(0, i)*Math.pow(-1, i) * detK(minor(a, 0, i));
+            }
+            return result;
         }
     }
+
     static matriks minor(matriks a,int brs, int klm) {
         matriks temp = new matriks();
         temp.setBaris(a.getBaris()-1);
@@ -14,17 +20,17 @@ public class kofaktor {
         temp.setMatriks();
         for (int i = 0; i < a.getBaris(); i++) {
             for (int j = 0; j < a.getKolom(); j++) {
-                if (i<brs-1 || j<klm-1) {
+                if (i<brs && j<klm) {
                     temp.setElmt(i, j, a.getELmt(i, j));
                 }
-                else if (i>brs-1 && j>klm-1) {
+                else if (i>brs && j>klm) {
                     temp.setElmt(i-1, j-1, a.getELmt(i, j));
                 }
-                else if(i>brs-1) {
-                    temp.setElmt(i-1, j, a.getELmt(i, j));
-                }
-                else if(j>klm-1) {
+                else if(j>klm && i!=brs) {
                     temp.setElmt(i, j-1, a.getELmt(i, j));
+                }
+                else if(i>brs && j!=klm) {
+                    temp.setElmt(i-1, j, a.getELmt(i, j));
                 }
             }
         }
