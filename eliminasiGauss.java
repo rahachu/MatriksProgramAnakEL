@@ -1,42 +1,45 @@
 public class eliminasiGauss{
 
-    public void tukarBaris(){
+    public static void tukarBaris(matriks a){
         // akan mengurutkan baris sesuai element pertamanya dngan urutan mengecil.
-    for (int i = 0; i < baris; i++){
+    for (int i = 0; i < a.getBaris(); i++){
         int max = i;
-        for (int j = I + 1; i < baris; j++){
-            if(Math.abs(matriks[j][i]) > Math.abs(matirk[max][i])){
+        for (int j = i + 1; i < a.getBaris(); j++){
+            if(Math.abs(a.getELmt(j,i)) > Math.abs(a.getElmt(max,i))){
                 max = j;
 
-                int[] temp = matrik[i];
-                matrik[i] = matrik[max];
-                matrik[max] = temp;
+                double[] temp =a.getElmtBaris(i) ;
+                a.setBaris(i,a.getElmtBaris(max));
+                a.setBaris(max, temp);
+                
+                
             }
         }
     }
 }
-    public void makeEselon(){
-        for (int i = 0; i < baris; i++){
+    public void makeEselon(matriks a){
+        for (int i = 0; i < a.getBaris(); i++){
             int klm = i;
-            for (int j = 0; j < kolom; i++){
-                double obe = matrik[i][j]/matrik[i][klm];
-                for (int k = i+1; brs < baris; brs++){
-                    matrik[k][j] -= obe*matirk[i][j];
+            for (int j = 0; j < a.getKolom(); j++){
+                double obe = a.getELmt(i, j)/a.getElmt(i,klm);
+                for (int brs= i+1; brs< a.getBaris(); brs++){
+                    setElmt(brs,j,(a.getElmt(brs,j) - obe*a.getElmt(i,j)));
                 }
             }
         }
     }
-    public double [] resultSpl(){
-        double[] temp = new double[baris]; // untuk menyimpan element matrik kolom teralhir (konstanta spl)
-        for (int i = 0; i<baris; i++){
-            temp [i] = matrik[i][kolom];
+    public void resultSpl(matriks a){
+        double[] temp = new double[a.getBaris()]; // untuk menyimpan element matrik kolom teralhir (konstanta spl)
+        for (int i = 0; i<a.getBaris(); i++){
+            temp[i] = matrik[i][a.getKolom()];
         }
-        for (int kol = kolom-2; kol>=0; kol--){
+        double [] resultSpl = new double[a.getKolom()];
+        for (int kol = a.getKolom()-2; kol>=0; kol--){
             double sum = 0;
-            for (int i = kol + 1; i<kolom; i--){
-                sum += matrik[kol][i]*resultSpl[i];}
+            for (int i = kol + 1; i<a.getKolom(); i--){
+                sum += a.getELmt(kol, i)*resultSpl[i];}
 
-            resultSpl[brs] = (temp[i] - sum)/matrik[i][i];
+            resultSpl[brs] = (temp[i] - sum)/a.getELmt(i, i);
             
         }
     }
