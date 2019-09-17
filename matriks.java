@@ -7,17 +7,8 @@ public class matriks {
     private double[][] matriks;
 
     //Konstruktor matriks
-    public matriks() {
-        System.out.print("Masukan jumlah baris:");
-        baris = scan.nextInt();
-        System.out.print("Masukan jumlah kolom:");
-        kolom = scan.nextInt();
+    public void setMatriks() {
         matriks = new double [baris][kolom];
-        for (int i = 0; i < baris; i++) {
-            for (int j = 0; j < kolom; j++) {
-                matriks[i][j]= scan.nextInt();
-            }
-        }
     }
 
     //Selektor
@@ -29,7 +20,7 @@ public class matriks {
         return kolom;
     }
     public double getELmt(int brs, int klm){
-        return (matriks[brs-1][klm-1]);
+        return (matriks[brs][klm]);
     }
     public double [] getElmtBaris(int brs){
         for (int i = 0; i < baris; i++){
@@ -41,6 +32,27 @@ public class matriks {
     }
 
     //Setter matriks
+    public void baca() {
+        System.out.print("Masukan jumlah baris:");
+        baris = scan.nextInt();
+        System.out.print("Masukan jumlah kolom:");
+        kolom = scan.nextInt();
+        matriks = new double [baris][kolom];
+        for (int i = 0; i < baris; i++) {
+            for (int j = 0; j < kolom; j++) {
+                matriks[i][j]= scan.nextDouble();
+            }
+        }
+    }
+
+    public void setBaris(int x) {
+        baris = x;
+    }
+
+    public void setKolom(int x) {
+        kolom = x;
+    }
+
     public void tulis() {
         for (int i = 0; i < baris; i++) {
             for (int j = 0; j < kolom; j++) {
@@ -50,7 +62,11 @@ public class matriks {
         }
     }
 
+<<<<<<< HEAD
     public void setElmt(int brs ,int klm, double elmt) {
+=======
+    public void setElmt(int brs ,int klm, Double elmt) {
+>>>>>>> 95c004e725cda211f1a73c25269d606f51867e24
         matriks[brs][klm]=elmt;
     }
     public void setBaris(int brs, double[] el){
@@ -71,25 +87,4 @@ public class matriks {
             matriks[baris1-1][i] /= x;
         }
     }
-
-    public void buat1Utama(int baris1) {
-        
-    }
-
-    //Gauss
-    public void matirksGaus(){
-
-    }
-    //Gauss Jordan
-    public void gaussJordan() {
-        //gauss();
-        for (int i = kolom-2; i >= 0; i--) {
-            for (int j = baris-1; j >= 0; j++) {
-                if (getELmt(j, i)!=0) {
-                    //obe;
-                }
-            }
-        }
-    }
-
 }
