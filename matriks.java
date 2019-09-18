@@ -22,6 +22,14 @@ public class matriks {
     public double getELmt(int brs, int klm){
         return (matriks[brs][klm]);
     }
+    public double [] getElmtBaris(int brs){
+        for (int i = 0; i < baris; i++){
+                double [] temp = new double[kolom];
+                temp[i] = getELmt(brs, i);
+            }
+    
+        return temp;
+    }
 
     //Setter matriks
     public void baca() {
@@ -54,10 +62,19 @@ public class matriks {
         }
     }
 
+<<<<<<< HEAD
+    public void setElmt(int brs ,int klm, double elmt) {
+=======
     public void setElmt(int brs ,int klm, Double elmt) {
+>>>>>>> 95c004e725cda211f1a73c25269d606f51867e24
         matriks[brs][klm]=elmt;
     }
-
+    public void setBaris(int brs, double[] el){
+        
+        for(int i = 0; i<baris;i++){
+            setElmt(brs, i, el[i]);
+        }
+    }
     //Operasi Baris Elementer
     public void tambahBaris(int kali,int baris1, int baris2) {
         for (int i = 0; i < kolom; i++) {
