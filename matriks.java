@@ -62,11 +62,7 @@ public class matriks {
         }
     }
 
-<<<<<<< HEAD
     public void setElmt(int brs ,int klm, double elmt) {
-=======
-    public void setElmt(int brs ,int klm, Double elmt) {
->>>>>>> 95c004e725cda211f1a73c25269d606f51867e24
         matriks[brs][klm]=elmt;
     }
     public void setBaris(int brs, double[] el){
