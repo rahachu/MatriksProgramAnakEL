@@ -36,4 +36,16 @@ public class kofaktor {
         }
         return temp;
     }
+    static matriks coffactor(matriks a){
+        matriks temp = new matriks();
+        temp.setBaris(a.getBaris());
+        temp.setKolom(a.getKolom());
+        temp.setMatriks();
+        for (int i = 0; i < a.getBaris(); i++) {
+            for (int j = 0; j < a.getKolom(); j++){
+                temp.setElmt(i,j, detK(minor(a,i,j)));
+            }
+        }
+        return temp;
+    }
 }
