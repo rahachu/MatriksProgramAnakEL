@@ -109,4 +109,14 @@ public class matriks {
         }
         return i;
     }
+    public void tranpose() {
+        double temp;
+        for (int i = 0; i < getBaris(); i++) {
+            for (int j = 0; j < getKolom(); j++) {
+                temp = getELmt(i, j);
+                setElmt(i, j, getELmt(j, i));
+                setElmt(j, i, temp);
+            }
+        }
+    }
 }
