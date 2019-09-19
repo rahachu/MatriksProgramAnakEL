@@ -1,5 +1,9 @@
 public class kofaktor {
-    public static double detK(matriks a) {
+    static double matriks(matriks a,int brs, int klm) {
+        return detK(minor(a,brs,klm));
+    }
+
+    static double detK(matriks a) {
         if (a.getBaris()==2 && a.getKolom()==2) {
             return (a.getELmt(0, 0)*a.getELmt(1, 1) - a.getELmt(1, 0)*a.getELmt(0, 1));
         }

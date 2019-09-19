@@ -62,8 +62,7 @@ public class matriks {
         }
     }
 
-    public void setElmt(int brs ,int klm, Double elmt) {
-
+    public void setElmt(int brs ,int klm, double elmt) {
         matriks[brs][klm]=elmt;
     }
     public void setBaris(int brs, double[] el){
@@ -73,14 +72,52 @@ public class matriks {
         }
     }
     //Operasi Baris Elementer
-    public void tambahBaris(int kali,int baris1, int baris2) {
+    public void tambahBaris(double kali,int baris1, int baris2) {
         for (int i = 0; i < kolom; i++) {
-            matriks[baris1-1][i] += (matriks[baris2-1][i]*kali);
+            matriks[baris1][i] += (matriks[baris2][i]*kali);
         }
     }
-        public void bagiBaris(int baris1,int x) {
+
+
+    public void bagiBaris(int baris1,double x) {
         for (int i = 0; i < kolom; i++) {
-            matriks[baris1-1][i] /= x;
+            matriks[baris1][i] /= x;
+        }
+    }
+
+    public boolean kolom0(int brs,int klm) {
+        boolean ans=true;
+        for (int i = brs; i < getBaris(); i++) {
+            if (getELmt(i, klm)!=0) {
+                ans = false;
+            }
+        }
+        return ans;
+    }
+    public boolean baris0(int brs) {
+        boolean ans =true;
+        for (int i = 0; i < getKolom(); i++) {
+            if (getELmt(brs, i)!=0) {
+                ans = false;
+            }
+        }
+        return ans;
+    }
+    public int firstn0(int brs,int klm) {
+        int i=brs;
+        while (getELmt(i, klm)==0 && i<getBaris()) {
+            i++;
+        }
+        return i;
+    }
+    public void tranpose() {
+        double temp;
+        for (int i = 0; i < getBaris(); i++) {
+            for (int j = 0; j < getKolom(); j++) {
+                temp = getELmt(i, j);
+                setElmt(i, j, getELmt(j, i));
+                setElmt(j, i, temp);
+            }
         }
     }
 }

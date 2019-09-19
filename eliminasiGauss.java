@@ -1,34 +1,51 @@
 public class eliminasiGauss{
 
-    public static void tukarBaris(matriks a){
-        // akan mengurutkan baris sesuai element pertamanya dngan urutan mengecil.
-    for (int i = 0; i < a.getBaris(); i++){
-        int max = i;
-        for (int j = i + 1; i < a.getBaris(); j++){
-            if(Math.abs(a.getELmt(j,i)) > Math.abs(a.getElmt(max,i))){
-                max = j;
-
-                double[] temp =a.getElmtBaris(i) ;
-                a.setBaris(i,a.getElmtBaris(max));
-                a.setBaris(max, temp);
-                
-                
-            }
-        }
+    public static void tukarBaris(matriks a,int b1,int b2){
+    // akan mengurutkan baris sesuai element pertamanya dngan urutan mengecil.
+    double sementara;
+    if (b1!=b2){
+        for (int i = 0 ; i < a.getKolom() ; i++){
+            sementara=a.getELmt(b1, i);
+            a.setElmt(b1, i, a.getELmt(b2, i));
+            a.setElmt(b2, i, sementara);
+        }}
     }
-}
-    public void makeEselon(matriks a){
-        for (int i = 0; i < a.getBaris(); i++){
-            int klm = i;
-            for (int j = 0; j < a.getKolom(); j++){
-                double obe = a.getELmt(i, j)/a.getElmt(i,klm);
-                for (int brs= i+1; brs< a.getBaris(); brs++){
-                    setElmt(brs,j,(a.getElmt(brs,j) - obe*a.getElmt(i,j)));
+    static void makeEselon(matriks a){
+        int stateEselon=0;
+        for (int i = 0; i < a.getKolom()-1; i++) {
+            if (!a.baris0(stateEselon)){
+                if (!a.kolom0(stateEselon,i)) {
+                    int n0 = a.firstn0(stateEselon,i);
+                    if (n0>stateEselon) {
+                        tukarBaris(a, stateEselon, n0);
+                    }
+                    a.bagiBaris(stateEselon, a.getELmt(stateEselon, i));
+                    for (int j = stateEselon+1 ; j < a.getBaris(); j++) {
+                        a.tambahBaris(-a.getELmt(j, i), j, stateEselon);
+                    }
+                    if (stateEselon<a.getBaris()) {
+                        stateEselon++;
+                    }
                 }
             }
         }
     }
-    public void resultSpl(matriks a){
+
+    static void makeEselonRed(matriks a) {
+        makeEselon(a);
+        for (int i = a.getBaris()-1; i > 0; i--) {
+            for (int j = 0; j < a.getKolom()-1; j++) {
+                if (a.getELmt(i, j)==1) {
+                    for (int k = i-1; k >= 0; k--) {
+                        System.out.println(i);
+                        a.tambahBaris(-a.getELmt(k, j), k, i);
+                    }
+                    j=a.getKolom();
+                }
+            }
+        }
+    }
+   /* public void resultSpl(matriks a){
         double[] temp = new double[a.getBaris()]; // untuk menyimpan element matrik kolom teralhir (konstanta spl)
         for (int i = 0; i<a.getBaris(); i++){
             temp[i] = matrik[i][a.getKolom()];
@@ -42,5 +59,5 @@ public class eliminasiGauss{
             resultSpl[brs] = (temp[i] - sum)/a.getELmt(i, i);
             
         }
-    }
+    }*/
 }
