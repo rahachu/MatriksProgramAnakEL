@@ -1,5 +1,6 @@
 public class cramer {
 	public static matriks cramy(matriks a,int c) {
+		//Mengembalikan matriks yang elemen-elemen kolom ke c nya sudah diubah dengan elemen kolom terakhir dan jumlah kolomnya dikurangu
 	matriks temp = new matriks();
         temp.setBaris(a.getBaris());
         temp.setKolom(a.getKolom()-1);
@@ -17,6 +18,7 @@ public class cramer {
         return temp;
     }
     public static matriks ori(matriks a){
+    	//Mengembalikan matriks yang sudah dihilangkan kolom terakhirnya
     	matriks temp = new matriks();
         temp.setBaris(a.getBaris());
         temp.setKolom(a.getKolom()-1);
@@ -30,9 +32,11 @@ public class cramer {
     }
     
     public static double como (matriks a,matriks b){
+    	//Mengembalikan hasil tunggal
     	return (kofaktor.detK(a))/(kofaktor.detK(b));
    	 }
    	 public static matriks result(matriks a){
+   	 	//Mengembalikan hasil dalam bentuk matriks
    	 	matriks temp = new matriks();
         temp.setBaris(1);
         temp.setKolom(a.getKolom());
