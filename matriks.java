@@ -84,7 +84,7 @@ public class matriks {
         }
     }
 
-    public boolean kolom0(int brs,int klm) {
+    public boolean kolom(int brs,int klm) {
         boolean ans=true;
         for (int i = brs; i < getBaris(); i++) {
             if (getELmt(i, klm)!=0) {

@@ -6,9 +6,9 @@ public class point {
     int y;
 
     public point() {
-        System.out.print("Masukan nilai x:");
+        System.out.print("Masukan nilai x: ");
         x = scan.nextInt();
-        System.out.print("Masukan nilai y:");
+        System.out.print("Masukan nilai y: ");
         y = scan.nextInt();
     }
 }

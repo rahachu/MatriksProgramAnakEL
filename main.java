@@ -1,8 +1,7 @@
 public class main {
-    public static void main(String[] args) {
-        matriks a = new matriks();
-        a.baca();
-        eliminasiGauss.makeEselon(a);
-        a.tulis();
+    public static void main(String[]args) {
+        arrayPoint a = new arrayPoint();
+        a.bacaPoint();
+        arrayPoint.titikToArray(a).tulis();
     }
 }
