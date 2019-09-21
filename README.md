@@ -5,12 +5,12 @@
 		[ ] Solusi banyak
 [x] determinan
 [x] eliminasi gaus
-[ ] eliminasi gaus jordan 
+[x] eliminasi gaus jordan 
 [ ] matriks balikan
 [ ] matriks kofaktor
 [ ] adjoin
 [ ] kaidah cramer
-[ ] baca file inputan
+[x] baca file inputan
 [ ] program utama
 Program untuk tugas besar Aljabar Linear dan Geometri
 
