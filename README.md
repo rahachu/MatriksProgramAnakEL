@@ -12,3 +12,10 @@
 [ ] kaidah cramer
 [ ] baca file inputan
 [ ] program utama
+Program untuk tugas besar Aljabar Linear dan Geometri
+
+
+3 jenis adt
+- Matriks
+- Point
+- ArrayPoint
