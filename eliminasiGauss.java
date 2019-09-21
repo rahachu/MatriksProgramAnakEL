@@ -14,7 +14,7 @@ public class eliminasiGauss{
         int stateEselon=0;
         for (int i = 0; i < a.getKolom()-1; i++) {
             if (!a.baris0(stateEselon)){
-                if (!a.kolom0(stateEselon,i)) {
+                if (!a.kolom(stateEselon,i)) {
                     int n0 = a.firstn0(stateEselon,i);
                     if (n0>stateEselon) {
                         tukarBaris(a, stateEselon, n0);
