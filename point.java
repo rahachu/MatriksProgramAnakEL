@@ -4,8 +4,8 @@ public class point {
     Scanner scan = new Scanner(System.in);
 
     public void point() {
-        int a = scan.nextInt();
-        System.out.print("Masukan nilai x y: ");
+        int a = scan.nextInt(); //Input
+        System.out.print("Masukan nilai x y: "); 
         double[][] temp = new double[a][2];
         for(int i = 0; i<a; i++){
             for(int j = 0; j<2; j++){
@@ -14,6 +14,7 @@ public class point {
         }
     }
     public void pointToMatriks(matriks a){
+    	//M
         int x;
         matriks save = new matriks();
         for(int i = 0; i< a.getBaris(); i++){

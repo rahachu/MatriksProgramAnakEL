@@ -7,6 +7,9 @@ public class kofaktor {
         if (a.getBaris()==2 && a.getKolom()==2) {
             return (a.getELmt(0, 0)*a.getELmt(1, 1) - a.getELmt(1, 0)*a.getELmt(0, 1));
         }
+        else if (a.getBaris()==1 && a.getKolom()==1) {
+            return a.getELmt(0,0);
+        }
         else {
             int result;
             result=0;
@@ -53,10 +56,15 @@ public class kofaktor {
         return temp;
     }
     static matriks adjoint(matriks a){
-        matriks temp = new matriks();
-        temp = coffactor(a);
-        temp.tranpose();
-        return temp;
+        if (a.getKolom()==1) {
+            return a;
+        }
+        else{
+            matriks temp = new matriks();
+            temp = coffactor(a);
+            temp.tranpose();
+            return temp;
+        }
     }
     static matriks invers(matriks a){
         matriks temp = new matriks();
@@ -65,7 +73,7 @@ public class kofaktor {
         temp.setMatriks();
         for (int i = 0; i < a.getBaris(); i++) {
             for (int j = 0; j < a.getKolom(); j++){
-                temp.setElmt(i,j, (adjoint(a).getELmt(i,j)/detK(a)));
+                temp.setElmt(j,i, (adjoint(a).getELmt(i,j)/detK(a)));
             }
         }
         return temp;
