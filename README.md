@@ -3,8 +3,8 @@
 		[ ] Solusi Unik
 		[ ] Tidak ada solusi
 		[ ] Solusi banyak
-[ ] determinan
-[ ] eliminasi gaus
+[x] determinan
+[x] eliminasi gaus
 [ ] eliminasi gaus jordan 
 [ ] matriks balikan
 [ ] matriks kofaktor
