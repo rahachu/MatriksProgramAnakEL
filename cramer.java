@@ -5,9 +5,9 @@ public class cramer {
         temp.setKolom(a.getKolom()-1);
         temp.setMatriks();
       	for (int i = 0; i < a.getBaris(); i++) {
-            for (int j = 0; j < a.getKolom(); j++) {
+            for (int j = 0; j < a.getKolom()-1; j++) {
                 if (c==j){
-                    temp.setElmt(i, j, a.getELmt(i, a.getKolom()));
+                    temp.setElmt(i, j, a.getELmt(i, a.getKolom()-1));
                 }
                 else {
                     temp.setElmt(i, j, a.getELmt(i, j));
@@ -22,8 +22,8 @@ public class cramer {
         temp.setKolom(a.getKolom()-1);
         temp.setMatriks();
       	for (int i = 0; i < a.getBaris(); i++) {
-            for (int j = 0; j < a.getKolom(); j++) {
-                    temp.setElmt(i, j, a.getELmt(i, a.getKolom()));
+            for (int j = 0; j < a.getKolom()-1; j++) {
+                    temp.setElmt(i, j, a.getELmt(i, j));
                 }
              }
         return temp;
