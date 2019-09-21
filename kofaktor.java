@@ -52,4 +52,25 @@ public class kofaktor {
         }
         return temp;
     }
+    static matriks adjoint(matriks a){
+        matriks temp = new matriks();
+        temp = coffactor(a);
+        temp.tranpose();
+        return temp;
+    }
+    static matriks invers(matriks a){
+        matriks temp = new matriks();
+        temp.setBaris(a.getBaris());
+        temp.setKolom(a.getKolom());
+        temp.setMatriks();
+        for (int i = 0; i < a.getBaris(); i++) {
+            for (int j = 0; j < a.getKolom(); j++){
+                temp.setElmt(i,j, (adjoint(a).getELmt(i,j)/detK(a)));
+            }
+        }
+        return temp;
+    }
+    static matriks inverspl(matriks a,matriks b){
+    return(matriks.kali(invers(a),b));
+    }
 }
