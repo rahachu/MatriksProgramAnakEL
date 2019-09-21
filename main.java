@@ -1,10 +1,7 @@
 public class main {
-    public static void main(String[]args) {
-        arrayPoint a = new arrayPoint();
-        matriks b  = new matriks();
-        a.bacaPoint();
-       b = a.titikToArray();
-       b.tulis();
-
+    public static void main(String[] args) {
+        matriks a = new matriks();
+        fileRead.matriks(a);
+        a.tulis();
     }
 }
