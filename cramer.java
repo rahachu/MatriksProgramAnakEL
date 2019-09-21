@@ -34,13 +34,11 @@ public class cramer {
    	 }
    	 public static matriks result(matriks a){
    	 	matriks temp = new matriks();
-        temp.setBaris(1);
-        temp.setKolom(a.getKolom());
+        temp.setBaris(a.getKolom()-1);
+        temp.setKolom(1);
         temp.setMatriks();
-        	for (int j = 0; j < a.getKolom(); j++) {
-        		for(int c=0; c<a.getKolom();c++){
-        		temp.setElmt(0, j, como(cramy(a,c),ori(a)));
-        	}
+        	for (int j = 0; j < a.getKolom()-1; j++) {
+        		temp.setElmt(j, 0, como(cramy(a,j),ori(a)));
    		}
    		return temp;
    	}

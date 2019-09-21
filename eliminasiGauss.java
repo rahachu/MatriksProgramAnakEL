@@ -37,7 +37,6 @@ public class eliminasiGauss{
             for (int j = 0; j < a.getKolom()-1; j++) {
                 if (a.getELmt(i, j)==1) {
                     for (int k = i-1; k >= 0; k--) {
-                        System.out.println(i);
                         a.tambahBaris(-a.getELmt(k, j), k, i);
                     }
                     j=a.getKolom();

@@ -7,5 +7,8 @@ public class main {
         cramer.cramy(a, 1).tulis();
         cramer.cramy(a, 2).tulis();
         cramer.ori(a).tulis();
+        cramer.result(a).tulis();
+        eliminasiGauss.makeEselonRed(a);
+        a.tulis();
     }
 }
