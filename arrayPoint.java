@@ -39,21 +39,22 @@ public class arrayPoint {
     }
     // primitif lain
     static matriks titikToArray(arrayPoint a){
-        matriks mtrx = new matriks();
-        mtrx.setBaris(a.Neff);
-        mtrx.setKolom(a.Neff+1);
-        for(int i = 0; i<a.Neff; i++){
-            for(int j = 0; j <= a.Neff; j++){
-                if(j<a.Neff){
-                    mtrx.setElmt(i, j, Math.pow(a.getElmtX(j),j+1));
+        matriks temp = new matriks();
+        temp.setBaris(a.getNeff());
+        temp.setKolom(a.getNeff()+1);
+        temp.setMatriks();
+        for(int i = 0; i<a.getNeff(); i++){
+            for(int j = 0; j <= a.getNeff(); j++){
+                if(j<a.getNeff()){
+                    temp.setElmt(i, j, Math.pow(a.getElmtX(j),j));
                     
                 }
-                if(j == a.Neff){
-                    mtrx.setElmt(i,j, a.getElmtY(j));
+                if(j == a.getNeff()){
+                    temp.setElmt(i,j, a.getElmtY(j));
                 }
             }
         }
-        return mtrx;
+        return temp;
     }
     
 }
