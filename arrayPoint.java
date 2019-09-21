@@ -2,26 +2,63 @@ import java.util.Scanner;
 
 public class arrayPoint {
     Scanner scan = new Scanner(System.in);
-    private int Neff;
-    private point[] arrPoints;
+    public int Neff;
+    public point[] arrPoints;
 
-    public arrayPoint() {
-        System.out.print("Masukan jumlah titik: ");
-        Neff = scan.nextInt();
-        for (int i = 0; i < Neff; i++) {
-            arrPoints[i]= new point();
+    // konstraktor
+    public void makeArray(int x){
+       arrPoints = new point [x];
+       Neff =x;
+    }
+    // selektor
+    public int getNeff(){
+        return Neff;
+    }
+    public double getElmtX(int i){
+        return arrPoints[i].x;
+    }
+    public double getElmtY(int i){
+        return arrPoints[i].y;
+    }
+    //set NEff
+    public void setElmtArr( point x, int i){
+        arrPoints[i] = x;
+    }
+    //Baca
+    public void bacaPoint(){
+        int k = 0;
+        System.out.print("Masukan Total Pengulangan: ");
+        k = scan.nextInt();
+        makeArray(k);
+        for(int j = 0; j <getNeff(); j++){
+            System.out.println("titik ke-" + j);
+            point x = new point();
+            setElmtArr( x, j);   
         }
     }
-    public titikToArray(point[] a){
-        matriks mtrx = new matriks();
-        mtrx.setBaris(a.Neff);
-        mtrx.setKolom(a.Neff+1);
-        for(int i = 0; i<Neff; i++){
-            for(int j = 0; j <= Neff; j++){
-                if(j<Neff){
-                    
-                }
+    // primitif lain
+   public matriks titikToArray(){
+        matriks temp = new matriks();
+        temp.setBaris(getNeff());
+        temp.setKolom(getNeff()+1);
+        temp.setMatriks();
+    for(int i = 0; i < getNeff(); i++){
+        for(int j = 0; j <= getNeff(); j++){
+            if(i < getNeff()){
+                temp.setElmt(i, j, Math.pow(getElmtX(i),j));
             }
+            if(j == getNeff()){
+                temp.setElmt(i, j, getElmtY(i));
+            }
+        }
+    }
+
+        return temp;
+    }
+   public void tulisPoint(){
+        for(int i = 0; i<Neff; i++){
+            System.out.print(arrPoints[i].x);
+                    
         }
     }
 }

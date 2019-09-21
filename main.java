@@ -1,5 +1,5 @@
 public class main {
-    public static void main(String[] args) {
+    public static void main() {
         matriks a = new matriks();
         matriks b = new matriks();
         a.baca();

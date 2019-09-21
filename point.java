@@ -2,6 +2,7 @@ import java.util.*;
 
 public class point {
     Scanner scan = new Scanner(System.in);
+<<<<<<< HEAD
 
     public void point() {
         int a = scan.nextInt(); //Input
@@ -34,5 +35,15 @@ public class point {
         
 
         
+=======
+    double x;
+    double y;
+
+    public  point() {
+        System.out.print("Masukan nilai x: ");
+        x = scan.nextDouble();
+        System.out.print("Masukan nilai y: ");
+        y = scan.nextDouble();
+>>>>>>> 2709beaa0beb6ee346d0c6777e926edd86c67977
     }
 }

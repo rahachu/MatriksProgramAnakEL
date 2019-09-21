@@ -56,15 +56,11 @@ public class kofaktor {
         return temp;
     }
     static matriks adjoint(matriks a){
-        if (a.getKolom()==1) {
-            return a;
-        }
-        else{
-            matriks temp = new matriks();
-            temp = coffactor(a);
-            temp.tranpose();
-            return temp;
-        }
+        matriks temp = new matriks();
+        matriks result = new matriks();
+        temp = coffactor(a);
+        result = temp.tranpos();
+        return result;
     }
     static matriks invers(matriks a){
         matriks temp = new matriks();
