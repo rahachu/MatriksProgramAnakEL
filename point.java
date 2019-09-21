@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class point {
     Scanner scan = new Scanner(System.in);
-    int x;
-    int y;
+    double x;
+    double y;
 
-    public point() {
+    public  point() {
         System.out.print("Masukan nilai x: ");
-        x = scan.nextInt();
+        x = scan.nextDouble();
         System.out.print("Masukan nilai y: ");
-        y = scan.nextInt();
+        y = scan.nextDouble();
     }
 }
