@@ -54,9 +54,10 @@ public class kofaktor {
     }
     static matriks adjoint(matriks a){
         matriks temp = new matriks();
+        matriks result = new matriks();
         temp = coffactor(a);
-        temp.tranpose();
-        return temp;
+        result = temp.tranpos();
+        return result;
     }
     static matriks invers(matriks a){
         matriks temp = new matriks();
