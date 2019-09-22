@@ -1,10 +1,15 @@
 public class main {
     public static void main(String[] args) {
         matriks a = new matriks();
-        matriks b = new matriks();
+        double [] b = new double[a.getBaris()];
         a.baca();
-        b.baca();
-        System.out.println(kofaktor.detK(a));
-            kofaktor.inverspl(a,b).tulis();
-    }
+       eliminasiGauss.makeEselonRed(a);
+       int x = 0;
+      b =  solusiSPL.solusiUnikGaussJordan(a);
+       for(int i = 0; i<a.getBaris(); i++){
+           x = i+1;
+           System.out.print("X"+ x +": ");
+           System.out.println(b[i]);
+       }
+}
 }
