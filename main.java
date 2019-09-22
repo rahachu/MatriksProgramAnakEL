@@ -1,8 +1,9 @@
 public class main {
-    public static void main(String[] args) {
+    public static void main() {
         matriks a = new matriks();
-        a.baca();
-        a.tranpose();
-        a.tulis();
+        matriks b = new matriks();
+      a.baca();
+      b = kofaktor.invers(a);
+      b.tulis();
     }
 }

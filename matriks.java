@@ -127,18 +127,20 @@ public class matriks {
         }
         return i;
     }
-    public void tranpose() {
+
+    public matriks tranpos() {
         //Menukarkan elemen baris x kolom dengan elemen kolom x baris
-        double temp;
+        matriks temp = new matriks();
+        temp.setKolom(getBaris());
+        temp.setBaris(getKolom());
+        temp.setMatriks();
+
         for (int i = 0; i < getBaris(); i++) {
             for (int j = 0; j < getKolom(); j++) {
-                temp = getELmt(i, j);
-                System.out.println(temp);
-                System.out.println(getELmt(j,i));
-                setElmt(i, j, getELmt(j, i));
-                setElmt(j, i, temp);
+              temp.setElmt(j, i, getELmt(i, j));
             }
         }
+        return temp;
     }
     static matriks kali(matriks a, matriks b){
         //Mengalikan dua buah matriks
