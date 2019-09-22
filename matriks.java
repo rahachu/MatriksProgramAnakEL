@@ -133,6 +133,8 @@ public class matriks {
         for (int i = 0; i < getBaris(); i++) {
             for (int j = 0; j < getKolom(); j++) {
                 temp = getELmt(i, j);
+                System.out.println(temp);
+                System.out.println(getELmt(j,i));
                 setElmt(i, j, getELmt(j, i));
                 setElmt(j, i, temp);
             }
