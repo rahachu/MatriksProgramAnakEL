@@ -39,11 +39,13 @@ public class fileRead {
         try {
             Scanner scan = new Scanner(System.in);
             String namafile = scan.nextLine();
-            Scanner scn = new Scanner(new BufferedReader(new FileReader(filename)));
+            Scanner scn = new Scanner(new BufferedReader(new FileReader(namafile)));
+            point poy= new point();
             int i = 0;
             while (scn.hasNextLine()) {
-                a[i].x=scn.nextDouble();
-                a[i].y=scn.nextDouble();
+                poy.x=scn.nextDouble();
+                poy.y=scn.nextDouble();
+                a.setElmtArr(poy,i);
                 i++;
             }
         } catch (FileNotFoundException e) {
