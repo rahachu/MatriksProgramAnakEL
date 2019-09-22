@@ -21,6 +21,7 @@ public class kofaktor {
     }
 
     static matriks minor(matriks a,int brs, int klm) {
+        //mengembalikan matriks berupa minor
         matriks temp = new matriks();
         temp.setBaris(a.getBaris()-1);
         temp.setKolom(a.getKolom()-1);
@@ -44,6 +45,7 @@ public class kofaktor {
         return temp;
     }
     static matriks coffactor(matriks a){
+        //mengembalikan matriks berupa kofaktor
         matriks temp = new matriks();
         temp.setBaris(a.getBaris());
         temp.setKolom(a.getKolom());
@@ -56,6 +58,7 @@ public class kofaktor {
         return temp;
     }
     static matriks adjoint(matriks a){
+        //mengembalikan tranpose dari kofaktor
         matriks temp = new matriks();
         matriks result = new matriks();
         temp = coffactor(a);
@@ -63,6 +66,7 @@ public class kofaktor {
         return result;
     }
     static matriks invers(matriks a){
+        //mengembalikan matriks yang berisi pembagian adjoint dengan determinan
         matriks temp = new matriks();
         temp.setBaris(a.getBaris());
         temp.setKolom(a.getKolom());
@@ -75,6 +79,7 @@ public class kofaktor {
         return temp;
     }
     static matriks inverspl(matriks a){
+        //mengembalikan matriks berupa jawaban dari spl dengan cara invers
         matriks temp = new matriks();
         temp.setBaris(a.getBaris());
         temp.setKolom(1);
