@@ -5,7 +5,9 @@ public class main {
         a.baca();
        eliminasiGauss.makeEselonRed(a);
        int x = 0;
+       a.tulis();
       b =  solusiSPL.solusiUnikGaussJordan(a);
+    
        for(int i = 0; i<a.getBaris(); i++){
            x = i+1;
            System.out.print("X"+ x +": ");

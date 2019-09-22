@@ -1,3 +1,5 @@
+
+
 public class solusiSPL{
     private static final double epsilon = 1e-8;
     
@@ -9,16 +11,18 @@ public class solusiSPL{
         return kolomY;
 
     }
-    static void solusiUnikGauss(matriks a){
-        double sum;
+    static double [] solusiUnikGauss(matriks a){
+        
         double [] kolomY = getCopyKolomY(a);
         double[] result = new double[a.getKolom()];
-        for(int i = 0; i < a.getKolom(); i++){
-            for(int j = a.getBaris() -1; j>= 0; j++){
-
+        for (int i = a.getBaris() -1; i>=0; i--){
+            double sum = 0;
+            for(int j = i+1; j<a.getBaris(); j++){
+                sum += a.getELmt(i, j)*result[j];
             }
-
+            result[i] = (kolomY[i] - sum)/a.getELmt(i, i);
         }
+        return result;
     }
     static double [] solusiUnikGaussJordan(matriks a){
 
@@ -39,7 +43,10 @@ public class solusiSPL{
 
     }
 
-    public void solusiTidakAda(){
+    static void solusiTidakAdaGauss(){
+
+    }
+    static void solusiTidakAdaGaussJordan(){
 
     }
 }
