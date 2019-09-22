@@ -2,40 +2,7 @@ import java.util.*;
 
 public class point {
     Scanner scan = new Scanner(System.in);
-<<<<<<< HEAD
 
-    public void point() {
-        int a = scan.nextInt(); //Input
-        System.out.print("Masukan nilai x y: "); 
-        double[][] temp = new double[a][2];
-        for(int i = 0; i<a; i++){
-            for(int j = 0; j<2; j++){
-            temp[i][j] = scan.nextInt();
-            }
-        }
-    }
-    public void pointToMatriks(matriks a){
-    	//M
-        int x;
-        matriks save = new matriks();
-        for(int i = 0; i< a.getBaris(); i++){
-            for(int j = 0; j<2; j++){
-            double tempx = a.getELmt(i, j);
-            
-                for(int k = 0; k<=a.getBaris(); k++){
-                    if(k<a.getBaris() && j ==0 ){
-                    save.setElmt(i, k, Math.pow(tempx,k));
-                    }
-                    else{
-                        save.setElmt(i,a.getKolom(),tempx);
-                    }
-                }
-            }
-        }
-        
-
-        
-=======
     double x;
     double y;
 
@@ -44,6 +11,6 @@ public class point {
         x = scan.nextDouble();
         System.out.print("Masukan nilai y: ");
         y = scan.nextDouble();
->>>>>>> 2709beaa0beb6ee346d0c6777e926edd86c67977
+
     }
 }
