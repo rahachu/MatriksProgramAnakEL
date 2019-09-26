@@ -41,7 +41,7 @@ public class menu {
   System.out.println("2. Determinan");
   System.out.println("3. Matriks balikan");
   System.out.println("4. Matriks kofaktor");
-  System.out.println("5. Adjoin");
+  System.out.println("5. Adjoint");
   System.out.println("6. Interpolasi Polinom");
   System.out.println("7. Keluar");
   int men;
@@ -57,6 +57,7 @@ public class menu {
   		mene=scan.nextInt();
   		switch(mene) {
   			case 1:
+  			pilihmatriks(a);
 
   			break;
 
@@ -80,15 +81,51 @@ public class menu {
     break;
 
   case 2:
-  pilihmatriks(a);
-  System.out.println(kofaktor.detK(a));
-   
+  	System.out.println("Metode:");
+  	System.out.println("1. Metode eliminasi Gass-Jordan");
+  	System.out.println("2. Metode Adjoint");
+ 
+  	int mence;
+  		mence=scan.nextInt();
+  		switch(mence) {
+  			case 1:
+  			pilihmatriks(a);
+
+  			break;
+
+  			case 2:
+  			pilihmatriks(a);
+  			System.out.println(kofaktor.detK(a));
+       		
+
+  			break;
+  			
+  			
+  		}
+
     break;
+  
 
   case 3:
-  pilihmatriks(a);
-  kofaktor.invers(a).tulis();
+  	System.out.println("Metode:");
+  	System.out.println("1. Metode eliminasi Gass-Jordan");
+  	System.out.println("2. Metode Adjoint");
+  	int mente;
+  		mente=scan.nextInt();
+  		switch(mente) {
+  			case 1:
+  			pilihmatriks(a);
 
+  			break;
+
+  			case 2:
+  			pilihmatriks(a);
+       		kofaktor.invers(a).tulis();
+
+  			break;
+  			
+  			
+  		}
     break;
 
   case 4:
