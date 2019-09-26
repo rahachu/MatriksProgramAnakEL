@@ -41,12 +41,19 @@ public class fileRead {
             String namafile = scan.nextLine();
             Scanner scn = new Scanner(new BufferedReader(new FileReader(namafile)));
             point poy= new point();
-            int i = 0;
+            int j=0;
             while (scn.hasNextLine()) {
-                poy.x=scn.nextDouble();
-                poy.y=scn.nextDouble();
-                a.setElmtArr(poy,i);
-                i++;
+                j++;
+                scn.nextLine();
+            }
+            scn.close();
+            scn=null;
+            scn = new Scanner(new BufferedReader(new FileReader(namafile)));
+            a.makeArray(j);
+            for (int i = 0; i < j; i++){
+                a.arrPoints[i].x=scn.nextDouble();
+                a.arrPoints[i].y=scn.nextDouble();
+                //a.setElmtArr(poy,i);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

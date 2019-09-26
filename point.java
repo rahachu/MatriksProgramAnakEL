@@ -7,7 +7,7 @@ public class point {
     double x;
     double y;
 
-    public  point() {
+    public  void baca() {
     	//Input
         System.out.print("Masukan nilai x: ");
         x = scan.nextDouble();

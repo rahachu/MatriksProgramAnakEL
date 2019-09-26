@@ -3,7 +3,8 @@ public class menu {
 	
 
   static void pilihmatriks (matriks a){
-  	 Scanner scan = new Scanner(System.in);
+	   Scanner scan = new Scanner(System.in);
+	   
 	System.out.println("Pilih jenis inputan");
 	System.out.println("1. Keyboard");
 	System.out.println("2. File");
@@ -26,14 +27,17 @@ public class menu {
 	switch(me){
 		case 1: p.bacaPoint();
 		break;
-		case 2: fileRead.interpolasi(p);
+		case 2: 
+		System.out.print("Masukan nama file: ");
+		fileRead.interpolasi(p);
 		break;
 	 }
   }
   public static void main(String[] args) {
   	Scanner scan = new Scanner(System.in);
   	int x;
-  	int y;
+	  int y;
+while (true) {
   	matriks a = new matriks();
   	arrayPoint p = new arrayPoint();
   System.out.println("Menu:");
@@ -217,7 +221,6 @@ public class menu {
        		else {
        			System.out.println("Solusi tidak ada.");
        		}
-  //tinggal pake solusi spl buat interp
 
     break;
    
@@ -228,6 +231,6 @@ public class menu {
   default:
     // code block
 }
-  }
+  }}
 
 }

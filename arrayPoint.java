@@ -9,6 +9,9 @@ public class arrayPoint {
     public void makeArray(int x){
        arrPoints = new point [x];
        Neff =x;
+       for (int i = 0; i < x; i++) {
+           arrPoints[i]=new point();
+       }
     }
     // selektor
     public int getNeff(){
@@ -33,6 +36,7 @@ public class arrayPoint {
         for(int j = 0; j <getNeff(); j++){
             System.out.println("titik ke-" + (j+1));
             point x = new point();
+            x.baca();
             setElmtArr( x, j);   
         }
     }

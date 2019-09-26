@@ -1,5 +1,3 @@
-
-
 public class solusiSPL{
     private static final double epsilon = 1e-8;
     
@@ -39,29 +37,6 @@ public class solusiSPL{
         return result;
 
     }
-    /*static double[] banyakGauss(matriks a){
-        double [] kolomY = getCopyKolomY(a);
-        double[] result = new double[a.getKolom()];
-        int i,count;
-        double sum;
-        i=0;
-        while (!a.baris0(i)) {
-            i++;
-        }
-        for (int j = 0; j < i; j++) {
-            sum = 0;
-            for(int k = j+1; k<i; k++){
-                sum += a.getELmt(j, k)*result[k];
-            }
-            result[j] = (kolomY[j] - sum)/a.getELmt(j, j);
-        }
-        count=0;
-        for (int j = i; j < a.getBaris(); j++) {
-            result [j]='t'+count;
-            count++;
-        }
-        return result;
-    }*/
 
     public static void BanyakGauss(matriks a) {
         //manulis hasil spl solusi banyak dengan metode gauss
@@ -106,7 +81,6 @@ public class solusiSPL{
         }
     }
 
-<<<<<<< HEAD
     static boolean isAda(matriks a){
         int i = 0;
         while(i<a.getKolom() && a.getELmt(a.getBaris()-1,i)==0){
@@ -121,13 +95,6 @@ public class solusiSPL{
             i++;
         }
         return i == a.getBaris();
-=======
-    static void solusiTidakAdaGauss(){
-        System.out.println("Solusi Sisitem Persamaan Linier Tidak Ada");
-    }
-    static void solusiTidakAdaGaussJordan(){
-        System.out.println("Solusi Sisitem Persamaan Linier Tidak Ada");
->>>>>>> 1bc69ab1859b9acc8f4865f6118307d08464f222
     }
 
 }
