@@ -106,10 +106,19 @@ public class solusiSPL{
         }
     }
 
-    static void solusiTidakAdaGauss(){
-
+    static boolean isAda(matriks a){
+        int i = 0;
+        while(i<a.getKolom() && a.getELmt(a.getBaris()-1,i)==0){
+            i++;
+        }
+        return !(i==a.getKolom()-1);
     }
-    static void solusiTidakAdaGaussJordan(){
 
+    static boolean isUnik(matriks a){
+        int i=0;
+        while(i<a.getBaris() && !a.baris0(i)){
+            i++;
+        }
+        return i == a.getBaris();
     }
 }

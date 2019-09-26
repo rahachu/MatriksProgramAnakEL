@@ -58,15 +58,25 @@ public class menu {
   		switch(mene) {
   			case 1:
   			pilihmatriks(a);
-       		double[] h = new double[a.getBaris()];
-       		eliminasiGauss.makeEselonRed(a);
+  			double[] h = new double[a.getBaris()];
+       		eliminasiGauss.makeEselon(a);
        		int k= 0;
 
-       		h= solusiSPL.solusiUnikGauss(a);
-       		for(int i= 0; i<a.getBaris(); i++){
-       			k=i+1;
-       			System.out.print("x"+k+": ");
-       			System.out.println(h[i]);
+  			if (solusiSPL.isAda(a)){
+       			if (solusiSPL.isUnik(a)) {
+		       		h= solusiSPL.solusiUnikGauss(a);
+		       		for(int i= 0; i<a.getBaris(); i++){
+		       			k=i+1;
+		       			System.out.print("x"+k+": ");
+		       			System.out.println(h[i]);
+		       		}
+       			}
+       			else{
+       				solusiSPL.BanyakGauss(a);
+       			}
+       		}
+       		else {
+       			System.out.println("Solusi tidak ada.");
        		}
 
 
@@ -74,16 +84,28 @@ public class menu {
 
   			case 2:
        		pilihmatriks(a);
-       		double[] b = new double[a.getBaris()];
-       		eliminasiGauss.makeEselonRed(a);
+  			double[] f = new double[a.getBaris()];
+       		eliminasiGauss.makeEselon(a);
        		int m= 0;
 
-       		b= solusiSPL.solusiUnikGaussJordan(a);
-       		for(int i= 0; i<a.getBaris(); i++){
-       			m=i+1;
-       			System.out.print("x"+m+": ");
-       			System.out.println(b[i]);
+  			if (solusiSPL.isAda(a)){
+       			if (solusiSPL.isUnik(a)) {
+		       		f= solusiSPL.solusiUnikGaussJordan(a);
+		       		for(int i= 0; i<a.getBaris(); i++){
+		       			m=i+1;
+		       			System.out.print("x"+m+": ");
+		       			System.out.println(f[i]);
+		       		}
+       			}
+       			else{
+       				solusiSPL.BanyakGauss(a);
+       			}
        		}
+       		else {
+       			System.out.println("Solusi tidak ada.");
+       		}
+
+
        	
 
   			break;
@@ -104,7 +126,7 @@ public class menu {
   case 2:
   	System.out.println("Metode:");
   	System.out.println("1. Metode eliminasi Gauss-Jordan");
-  	System.out.println("2. Metode Ekspansi");
+  	System.out.println("2. Metode Ekspansi Kofaktor");
  
   	int mence;
   		mence=scan.nextInt();
@@ -161,6 +183,29 @@ public class menu {
 
   case 6:
   pilihinterv(p);
+  matriks interp = new matriks();
+  interp = p.titikToArray();
+  double[] z = new double[a.getBaris()];
+       		eliminasiGauss.makeEselon(a);
+       		int yg= 0;
+
+  			if (solusiSPL.isAda(a)){
+       			if (solusiSPL.isUnik(a)) {
+		       		z= solusiSPL.solusiUnikGaussJordan(a);
+		       		for(int i= 0; i<a.getBaris(); i++){
+		       			yg=i+1;
+		       			System.out.print("x"+yg+": ");
+		       			System.out.println(z[i]);
+		       		}
+       			}
+       			else{
+       				solusiSPL.BanyakGauss(a);
+       			}
+       		}
+       		else {
+       			System.out.println("Solusi tidak ada.");
+       		}
+  //tinggal pake solusi spl buat interp
 
     break;
    
