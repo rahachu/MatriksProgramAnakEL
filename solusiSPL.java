@@ -44,9 +44,10 @@ public class solusiSPL{
     }
 
     static void solusiTidakAdaGauss(){
-
+        System.out.println("Solusi Sisitem Persamaan Linier Tidak Ada");
     }
     static void solusiTidakAdaGaussJordan(){
-
+        System.out.println("Solusi Sisitem Persamaan Linier Tidak Ada");
     }
+
 }

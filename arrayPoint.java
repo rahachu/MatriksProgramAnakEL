@@ -61,4 +61,13 @@ public class arrayPoint {
                     
         }
     }
+    public void tulisSolusiInterpolasi(double [] a){
+        for(int i = 0; i < getNeff(); i++){
+            System.out.print(a[i] + " ");
+            if(i !=0){
+                System.out.print(a[i] + " ");
+                System.out.print("X^" + i + " + ");
+            }
+        }
+    }
 }
