@@ -31,29 +31,21 @@ public class eliminasiGauss{
         }
     }
     static double determinaneselon(matriks a){
-        int stateEselon=0;
-        double counter=1;
+        matriks b = a;
+        double temp;
         for (int i = 0; i < a.getKolom()-1; i++) {
-            if (!a.baris0(stateEselon)){
-                if (!a.kolom0(stateEselon,i)) {
-                    int n0 = a.firstn0(stateEselon,i);
-                    if (n0>stateEselon) {
-                        tukarBaris(a, stateEselon, n0);
-                        counter*=-1;
-                    }
-                    a.bagiBaris(stateEselon, a.getELmt(stateEselon, i));
-                    counter*=a.getELmt(stateEselon, i);
-                    for (int j = stateEselon+1 ; j < a.getBaris(); j++) {
-                        a.tambahBaris(-a.getELmt(j, i), j, stateEselon);
-                    }
-                    if (stateEselon<a.getBaris()) {
-                        stateEselon++;
-                    }
+            for (int j = i+1; j < a.getKolom(); j++) {
+                temp = b.getELmt(j, i)/b.getELmt(i, i);
+                for (int k = 0; k < a.getKolom(); k++) {
+                    b.setElmt(j, k, b.getELmt(j, k)-b.getELmt(i, k)*temp);
                 }
             }
-        }
-        return counter;        
-            
+        }      
+        double result=1;
+            for (int i = 0; i < a.getKolom(); i++) {
+                result*=b.getELmt(i, i);
+            }
+        return result;
         }
 
     

@@ -6,10 +6,10 @@ public class kofaktor {
     static double detK(matriks a) {
         if (a.getBaris()==2 && a.getKolom()==2) {
             return (a.getELmt(0, 0)*a.getELmt(1, 1) - a.getELmt(1, 0)*a.getELmt(0, 1));
-        }
+        }/*
         else if (a.getBaris()==1 && a.getKolom()==1) {
             return a.getELmt(0,0);
-        }
+        }*/
         else {
             int result;
             result=0;
