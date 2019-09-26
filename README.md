@@ -10,7 +10,7 @@ Dalam porgram ini kita menggunakan library:
 import java.util.*;
 import java.io.*;
 ```
-library tersebut kita gunkan untuk menscan nilai dan juga untuk memanggil kelas Math
+Library tersebut kita gunakan untuk menscan masukan dari keyboard maupun file. 
 
 ## Contributing
 Program hanya bersifat privat dan ada tiga kontributor yaitu Muhammad Rahadian Alamsyah Putra Winarno 13518011, Byan Sakura Kireyna Aji	13518066, dan Fatkhan Masruri 13518053. Kontributor tersebut dapat melakukan pull ataupun push pada github.
