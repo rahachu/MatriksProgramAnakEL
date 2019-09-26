@@ -82,14 +82,15 @@ public class menu {
 
   case 2:
   	System.out.println("Metode:");
-  	System.out.println("1. Metode eliminasi Gass-Jordan");
-  	System.out.println("2. Metode Adjoint");
+  	System.out.println("1. Metode eliminasi Gauss-Jordan");
+  	System.out.println("2. Metode Ekspansi");
  
   	int mence;
   		mence=scan.nextInt();
   		switch(mence) {
   			case 1:
   			pilihmatriks(a);
+  			System.out.println(eliminasiGauss.determinaneselon(a));
 
   			break;
 
@@ -98,8 +99,7 @@ public class menu {
   			System.out.println(kofaktor.detK(a));
        		
 
-  			break;
-  			
+  			break;  			
   			
   		}
 
@@ -108,7 +108,7 @@ public class menu {
 
   case 3:
   	System.out.println("Metode:");
-  	System.out.println("1. Metode eliminasi Gass-Jordan");
+  	System.out.println("1. Metode eliminasi Gauss-Jordan");
   	System.out.println("2. Metode Adjoint");
   	int mente;
   		mente=scan.nextInt();

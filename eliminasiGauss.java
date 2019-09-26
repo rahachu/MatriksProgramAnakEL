@@ -14,7 +14,7 @@ public class eliminasiGauss{
         int stateEselon=0;
         for (int i = 0; i < a.getKolom()-1; i++) {
             if (!a.baris0(stateEselon)){
-                if (!a.kolom(stateEselon,i)) {
+                if (!a.kolom0(stateEselon,i)) {
                     int n0 = a.firstn0(stateEselon,i);
                     if (n0>stateEselon) {
                         tukarBaris(a, stateEselon, n0);
@@ -30,6 +30,33 @@ public class eliminasiGauss{
             }
         }
     }
+    static double determinaneselon(matriks a){
+        int stateEselon=0;
+        double counter=1;
+        for (int i = 0; i < a.getKolom()-1; i++) {
+            if (!a.baris0(stateEselon)){
+                if (!a.kolom0(stateEselon,i)) {
+                    int n0 = a.firstn0(stateEselon,i);
+                    if (n0>stateEselon) {
+                        tukarBaris(a, stateEselon, n0);
+                        counter*=-1;
+                    }
+                    a.bagiBaris(stateEselon, a.getELmt(stateEselon, i));
+                    counter*=a.getELmt(stateEselon, i);
+                    for (int j = stateEselon+1 ; j < a.getBaris(); j++) {
+                        a.tambahBaris(-a.getELmt(j, i), j, stateEselon);
+                    }
+                    if (stateEselon<a.getBaris()) {
+                        stateEselon++;
+                    }
+                }
+            }
+        }
+        return counter;        
+            
+        }
+
+    
 
     static void makeEselonRed(matriks a) {
         makeEselon(a);
@@ -54,7 +81,6 @@ public class eliminasiGauss{
             double sum = 0;
             for (int i = kol + 1; i<a.getKolom(); i--){
                 sum += a.getELmt(kol, i)*resultSpl[i];}
-
             resultSpl[brs] = (temp[i] - sum)/a.getELmt(i, i);
             
         }

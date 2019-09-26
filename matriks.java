@@ -139,9 +139,11 @@ public class matriks {
             for (int j = 0; j < getKolom(); j++) {
               temp.setElmt(j, i, getELmt(i, j));
             }
-        }
-        return temp;
+        
+       
     }
+     return temp;
+}
     static matriks kali(matriks a, matriks b){
         //Mengalikan dua buah matriks
         matriks temp = new matriks();

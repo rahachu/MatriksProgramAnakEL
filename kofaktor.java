@@ -20,36 +20,7 @@ public class kofaktor {
         }
     }
 
-static double determinansar(matriks a){
-    if (a.getBaris()==2 && a.getKolom()==2) {
-            return (a.getELmt(0, 0)*a.getELmt(1, 1) - a.getELmt(1, 0)*a.getELmt(0, 1));
-        }
-        else if (a.getBaris()==1 && a.getKolom()==1) {
-            return a.getELmt(0,0);
-        }
-        else {
-            int result,resalt,finall;
-            result=0;
-            resalt=0;
 
-            for (int i = 0; i < a.getBaris(); i++) {
-                for (int j = 0; j < a.getKolom(); j++){
-                    if(i==j){
-                        result+=a.getELmt(i,j);
-                    }
-                }
-            }
-            for (int i = a.getBaris(); i >=0; i--) {
-                for (int j=a.getKolom(); j >=0; j--){
-                    if(i==j){
-                        resalt+=a.getELmt(i,j);
-                    }
-                }
-            }
-            finall=result-resalt;
-            return finall;
-        }
-    }
     static matriks minor(matriks a,int brs, int klm) {
         //mengembalikan matriks berupa minor
         matriks temp = new matriks();
