@@ -39,8 +39,72 @@ public class solusiSPL{
         return result;
 
     }
-    public void solusiBanyak(){
+    /*static double[] banyakGauss(matriks a){
+        double [] kolomY = getCopyKolomY(a);
+        double[] result = new double[a.getKolom()];
+        int i,count;
+        double sum;
+        i=0;
+        while (!a.baris0(i)) {
+            i++;
+        }
+        for (int j = 0; j < i; j++) {
+            sum = 0;
+            for(int k = j+1; k<i; k++){
+                sum += a.getELmt(j, k)*result[k];
+            }
+            result[j] = (kolomY[j] - sum)/a.getELmt(j, j);
+        }
+        count=0;
+        for (int j = i; j < a.getBaris(); j++) {
+            result [j]='t'+count;
+            count++;
+        }
+        return result;
+    }*/
 
+    public static matriks BanyakGauss(matriks a) {
+        //manulis hasil spl solusi banyak dengan metode gauss
+        matriks b = a;
+        matriks c = new matriks();
+        int count=0;
+        int j;
+        c.setBaris(a.getBaris());
+        c.setKolom(a.getKolom());
+        c.setMatriks();
+        eliminasiGauss.makeEselonRed(b);
+        for (int i = 0; i < b.getBaris(); i++) {
+            j=0;
+            while (!b.baris0(i) && b.getELmt(i, j)==0){
+                j++;
+            }
+            if (!b.baris0(i)) {
+                for (int k = 0; k < c.getKolom(); k++) {
+                    c.setElmt(j, k, b.getELmt(i, k));
+                }
+            }
+        }
+        for (int i = 0; i < c.getBaris(); i++) {
+            System.out.print("X"+(i+1)+": ");
+            if (!c.baris0(i)) {
+                System.out.print(c.getELmt(i, c.getKolom()-1));
+                for (j = i+1; j < c.getKolom()-1; j++) {
+                    if (c.getELmt(i, j)!=0) {
+                        if (c.getELmt(i, j)<0) {
+                            System.out.print('+');
+                        }
+                        System.out.print(-c.getELmt(i, j));
+                        System.out.print((char)(118-j));
+                    }
+                }
+                System.out.println();
+            }
+            else{
+                System.out.println((char)(118-i));
+                count++;
+            }
+        }
+        return c;
     }
 
     static void solusiTidakAdaGauss(){
