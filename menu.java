@@ -111,11 +111,22 @@ public class menu {
   			break;
 
   			case 3:
-
+  			pilihmatriks(a);
+  			matriks cow= kofaktor.inverspl(a);
+  			for (int i=0; i<cow.getBaris(); i++){
+  				System.out.print("x"+(i+1)+": ");
+  				System.out.println(cow.getELmt(i,0));
+  			}
   			break;
   			case 4:
   			pilihmatriks(a);
-  			cramer.result(a).tulis();
+  			matriks cew=cramer.result(a);
+  			for (int i=0; i<cew.getBaris(); i++){
+  				System.out.print("x"+(i+1)+": ");
+  				System.out.println(cew.getELmt(i,0));
+  			}
+
+  			
 
   			break;
   		}
@@ -125,7 +136,7 @@ public class menu {
 
   case 2:
   	System.out.println("Metode:");
-  	System.out.println("1. Metode eliminasi Gauss-Jordan");
+  	System.out.println("1. Metode eliminasi OBE");
   	System.out.println("2. Metode Ekspansi Kofaktor");
  
   	int mence;
@@ -158,6 +169,7 @@ public class menu {
   		switch(mente) {
   			case 1:
   			pilihmatriks(a);
+  			eliminasiGauss.inversGaussJordan(a).tulis();
 
   			break;
 

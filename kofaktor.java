@@ -82,6 +82,7 @@ public class kofaktor {
     static matriks inverspl(matriks a){
         //mengembalikan matriks berupa jawaban dari spl dengan cara invers
         matriks temp = new matriks();
+        matriks cow = new matriks();
         temp.setBaris(a.getBaris());
         temp.setKolom(1);
         temp.setMatriks();

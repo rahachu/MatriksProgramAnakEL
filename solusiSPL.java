@@ -106,6 +106,7 @@ public class solusiSPL{
         }
     }
 
+<<<<<<< HEAD
     static boolean isAda(matriks a){
         int i = 0;
         while(i<a.getKolom() && a.getELmt(a.getBaris()-1,i)==0){
@@ -120,5 +121,13 @@ public class solusiSPL{
             i++;
         }
         return i == a.getBaris();
+=======
+    static void solusiTidakAdaGauss(){
+        System.out.println("Solusi Sisitem Persamaan Linier Tidak Ada");
     }
+    static void solusiTidakAdaGaussJordan(){
+        System.out.println("Solusi Sisitem Persamaan Linier Tidak Ada");
+>>>>>>> 1bc69ab1859b9acc8f4865f6118307d08464f222
+    }
+
 }

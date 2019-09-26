@@ -31,7 +31,7 @@ public class arrayPoint {
         k = scan.nextInt();
         makeArray(k);
         for(int j = 0; j <getNeff(); j++){
-            System.out.println("titik ke-" + j);
+            System.out.println("titik ke-" + (j+1));
             point x = new point();
             setElmtArr( x, j);   
         }
@@ -59,6 +59,15 @@ public class arrayPoint {
         for(int i = 0; i<Neff; i++){
             System.out.print(arrPoints[i].x);
                     
+        }
+    }
+    public void tulisSolusiInterpolasi(double [] a){
+        for(int i = 0; i < getNeff(); i++){
+            System.out.print(a[i] + " ");
+            if(i !=0){
+                System.out.print(a[i] + " ");
+                System.out.print("X^" + i + " + ");
+            }
         }
     }
 }
