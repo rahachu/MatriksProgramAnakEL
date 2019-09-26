@@ -50,7 +50,7 @@ public class menu {
   case 1:
   	System.out.println("Metode:");
   	System.out.println("1. Metode eliminasi Gauss");
-  	System.out.println("2. Metode eliminasi Gass-Jordan");
+  	System.out.println("2. Metode eliminasi Gauss-Jordan");
   	System.out.println("3. Metode matriks balikan");
   	System.out.println("4. Kaidah Cramer");
   	int mene;
@@ -58,17 +58,37 @@ public class menu {
   		switch(mene) {
   			case 1:
   			pilihmatriks(a);
+       		double[] h = new double[a.getBaris()];
+       		eliminasiGauss.makeEselonRed(a);
+       		int k= 0;
+
+       		h= solusiSPL.solusiUnikGauss(a);
+       		for(int i= 0; i<a.getBaris(); i++){
+       			k=i+1;
+       			System.out.print("x"+k+": ");
+       			System.out.println(h[i]);
+       		}
+
 
   			break;
 
   			case 2:
        		pilihmatriks(a);
+       		double[] b = new double[a.getBaris()];
+       		eliminasiGauss.makeEselonRed(a);
+       		int m= 0;
+
+       		b= solusiSPL.solusiUnikGaussJordan(a);
+       		for(int i= 0; i<a.getBaris(); i++){
+       			m=i+1;
+       			System.out.print("x"+m+": ");
+       			System.out.println(b[i]);
+       		}
+       	
 
   			break;
 
   			case 3:
-  			pilihmatriks(a);
-       		kofaktor.inverspl(a).tulis();
 
   			break;
   			case 4:
@@ -77,6 +97,7 @@ public class menu {
 
   			break;
   		}
+  	
 
     break;
 
