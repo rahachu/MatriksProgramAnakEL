@@ -185,21 +185,21 @@ public class menu {
   pilihinterv(p);
   matriks interp = new matriks();
   interp = p.titikToArray();
-  double[] z = new double[a.getBaris()];
-       		eliminasiGauss.makeEselon(a);
+  double[] z = new double[interp.getBaris()];
+       		eliminasiGauss.makeEselonRed(interp);
        		int yg= 0;
 
-  			if (solusiSPL.isAda(a)){
-       			if (solusiSPL.isUnik(a)) {
-		       		z= solusiSPL.solusiUnikGaussJordan(a);
-		       		for(int i= 0; i<a.getBaris(); i++){
+  			if (solusiSPL.isAda(interp)){
+       			if (solusiSPL.isUnik(interp)) {
+		       		z= solusiSPL.solusiUnikGaussJordan(interp);
+		       		for(int i= 0; i<interp.getBaris(); i++){
 		       			yg=i+1;
-		       			System.out.print("x"+yg+": ");
+		       			System.out.print("x^"+(yg-1)+": ");
 		       			System.out.println(z[i]);
 		       		}
        			}
        			else{
-       				solusiSPL.BanyakGauss(a);
+       				solusiSPL.BanyakGauss(interp);
        			}
        		}
        		else {
